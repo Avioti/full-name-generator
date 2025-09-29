@@ -18,14 +18,24 @@ public class FullNameApplication {
 
 
 
-        if (!Middle_name.isEmpty()){
+        if (!Stringtruth(Middle_name)){
             System.out.print(First_name.trim() + " " +  Middle_name.trim() + " " + Last_name.trim());
         }else{
-            System.out.print(First_name.trim() + " " + Last_name.trim());
+            System.out.print(First_name.trim().concat(" ") + Middle_name.trim() + Last_name.trim());
         }
-        if (!Suffix.isEmpty()){
-            System.out.print("," + " " + Suffix);
+        if (!Stringtruth(Suffix)){
+            System.out.print(",".concat(" ") + Suffix.trim());
         }
 
     }
+
+    public static boolean Stringtruth(String str){
+        if (str.trim().isEmpty())
+            return true;
+             else
+            return false;
+
+    }
+
+
 }
